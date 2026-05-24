@@ -8,10 +8,10 @@ class Deck:
     return Deck(self.n_red - 2, self.n_black)
 
   def take_2_black(self) -> "Deck":
-    return Deck(self.n_red, self.n_black)
+    return Deck(self.n_red - 2, self.n_black)
   
   def take_1_each(self) -> "Deck":
-    return Deck(self.n_red, self.n_black - 1)
+    return Deck(self.n_red - 1, self.n_black - 1)
 
   @property
   def all_red(self):
@@ -42,10 +42,13 @@ def simulate(deck: Deck):
     out["all_black_n"] += 1
     return
   else:
-    simulate(deck.take_2_black())
-    simulate(deck.take_2_red())
-    simulate(deck.take_1_each())
+    # deck.take_2_black() path
+    if deck.all_black
 
 reset_out()
 simulate(Deck(2,2))
 print(out)
+# %% 
+print(0.4666666667 / ((1/3)** 7))
+print(1020.6000000729005/3)
+# %%

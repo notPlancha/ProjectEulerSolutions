@@ -1,7 +1,7 @@
 from typing import Generator
 from sympy import Circle, Point, sqrt
 
-def find_circles_of_mat_distance(d: int, center = Point(0,0)) -> Generator[Circle, tuple[int, int]]:
+def find_circles_of_mat_distance(d: int, center = Point(0,0)) -> Generator[Circle]:
   first = 0
   last = d
   while first < last: # first + last = d

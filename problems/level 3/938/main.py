@@ -1,54 +1,44 @@
 from dataclasses import dataclass
+from math import comb
+
 @dataclass
 class Deck:
   n_red: int
   n_black: int
 
-  def take_2_red(self) -> "Deck":
-    return Deck(self.n_red - 2, self.n_black)
+  def prob_A(self):
+    if self.n_red < 2:
+      return 0
+    return comb(self.n_red, 2) / comb(self.n_red + self.n_black, 2)
+  
+  def prob_B(self):
+    if self.n_black < 2:
+      return 0
+    return comb(self.n_black, 2) / comb(self.n_red + self.n_black, 2)
 
-  def take_2_black(self) -> "Deck":
+  def prob_C(self):
+    if self.n_red < 1 or self.n_black < 1:
+      return 0
+    return comb(self.n_red, 1) * comb(self.n_black, 1) / comb(self.n_red + self.n_black, 2)
+  
+  @property
+  def do_A(self) -> "Deck":
     return Deck(self.n_red - 2, self.n_black)
   
-  def take_1_each(self) -> "Deck":
-    return Deck(self.n_red - 1, self.n_black - 1)
-
   @property
-  def all_red(self):
-    return self.n_black <= 0 and self.n_red > 0
-  @property
-  def all_black(self):
-    return self.n_red <= 0 and self.n_black > 0
+  def do_B(self) -> "Deck":
+    return Deck(self.n_red, self.n_black)
   
-# %% 
-# calculate tree and check which ones are all black
-out = {
-  "all_red_n" : 0,
-  "all_black_n": 0
-}
+  @property
+  def do_C(self) -> "Deck":
+    return Deck(self.n_red, self.n_black - 1)
 
-def reset_out():
-  global out
-  out = {
-    "all_red_n" : 0,
-    "all_black_n": 0
-  }
-
-def simulate(deck: Deck):
-  if deck.all_red:
-    out["all_red_n"] += 1
-    return
-  elif deck.all_black:
-    out["all_black_n"] += 1
-    return
-  else:
-    # deck.take_2_black() path
-    if deck.all_black
-
-reset_out()
-simulate(Deck(2,2))
-print(out)
-# %% 
-print(0.4666666667 / ((1/3)** 7))
-print(1020.6000000729005/3)
-# %%
+  
+def prob(deck: Deck):
+  if deck.n_red == 0:
+    return 1
+  if deck.n_black == 0:
+      return 0
+  return deck.prob_A * prob(deck.do_A) + \
+    deck.prob_B * prob(deck.do_B) + \
+    deck.prob_C * prob(deck.do_C)

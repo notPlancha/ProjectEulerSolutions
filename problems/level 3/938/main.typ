@@ -22,6 +22,9 @@ $
   \ 
   P(a,b) &= cases(1 "if" a == 0, 0 "if" b == 0, f(a,b) "otherwise")
   \
+  f(a,b) =& P(A; a,b) dot P(a-2, b) + \
+  +& P(B; a,b) dot P(a,b) \
+  +& P(C; a,b) dot P(a,b-1)
 $
 
 $ binom(n, 1) = n $
@@ -29,23 +32,23 @@ $ binom(n, 1) = n $
 #pagebreak()
 
 $
-  P(2,2) &= P(A; 2,2) dot P(0,2) + \ 
-          & + P(B; 2,2) dot P(2,2) \
-          & + P(C; 2,2) dot P(2,1)
+  P(2,2)   =&P(A; 2,2) dot P(0,2) + \ 
+           +& P(B; 2,2) dot P(2,2) \
+           +& P(C; 2,2) dot P(2,1)
   \ \ \ \ \
   P(0,2) &= 1
   \ \ \ \ \
-  P(2,1) &= P(A; 2,1) dot P(0,1) + \
-          & + P(B; 2,1) dot P(2,1) \
-          & + P(C; 2,1) dot P(2,0)
+  P(2,1)   = & P(A; 2,1) dot P(0,1) + \
+           + & P(B; 2,1) dot P(2,1) \
+           + & P(C; 2,1) dot P(2,0)
   \ \ \ \ \
-  P(0,1) &= 1 \
-  P(2,0) &= 0 \
+  P(0,1)    &= 1 \
+  P(2,0)    &= 0 \
   P(B; 2,1) &= 0 \
   \ \ \ \ \
-  therefore P(2,1) &= P(A; 2,1) dot 1 + \
-          & + 0 dot P(2,1) \
-          & + P(C; 2,1) dot 0 \
+  therefore P(2,1)  =& P(A; 2,1) dot 1 + \
+                    +& 0 dot P(2,1) \
+                    +& P(C; 2,1) dot 0 \
       P(2,1)     &= P(A; 2,1) \
       &=binom(2, 2) / binom(3, 2) \
       &=1/3

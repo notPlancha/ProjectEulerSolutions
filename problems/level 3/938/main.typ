@@ -68,3 +68,25 @@ $
           & + 4/6 dot 1/3 \
   equiv P(2,2) &= 7/15 = 0.4(6) \ && qed
 $
+
+#pagebreak()
+
+$
+  f(a,b) =& P(A; a,b) dot f(a-2, b) + \
+  +& P(B; a,b) dot f(a,b) \
+  +& P(C; a,b) dot f(a,b-1) \
+
+  \ \ \ \ \
+  alpha &= P(A; a,b) \
+  beta  &= P(B; a,b) \
+  gamma &= P(C; a,b) \
+  y &= f(a-2, b) \
+  x &= f(a, b) \
+  z &= f(a, b-1) \
+
+  \ \ \ \ \
+  x &= alpha dot y + beta dot x + gamma dot z \
+  gamma z &= (1-beta) x - alpha y \
+  x &= (gamma z  + alpha y)/(1-beta) \
+  
+$

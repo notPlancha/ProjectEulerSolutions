@@ -91,6 +91,8 @@ $
 
   \ \ \ \ \
 
-  f(a,b) &= P_C dot f(a, b-1)
+  f(a,b) &= (P_C dot f(a, b-1) + P_A dot f(a-2, b))/ (1 - P_B)
   
 $
+
+#pagebreak()

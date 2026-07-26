@@ -8,6 +8,7 @@ dependencies = [
     "icecream>=2.2.0",
     "ipykernel>=7.2.0",
     "more-itertools>=11.1.0",
+    "numpy>=2.5.1",
     "sympy>=1.14.0",
     "tqdm>=4.69.1",
 ]

@@ -88,5 +88,9 @@ $
   x &= alpha dot y + beta dot x + gamma dot z \
   gamma z &= (1-beta) x - alpha y \
   x &= (gamma z  + alpha y)/(1-beta) \
+
+  \ \ \ \ \
+
+  f(a,b) &= P_C dot f(a, b-1)
   
 $

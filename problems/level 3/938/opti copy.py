@@ -1,7 +1,8 @@
-from dataclasses import dataclass
-from math import comb
-from functools import cache
 import sys
+from functools import cache
+from math import comb
+
+import numpy as np
 from tqdm import tqdm
 
 sys.setrecursionlimit(10**8)
@@ -34,7 +35,7 @@ def prob(a,b):
     return 0
   
   alpha = prob_a(a,b)
-  beta = prob_b(a,b)
+  beta  = prob_b(a,b)
   gamma = prob_c(a,b)
   y = prob(a-2, b)
   z = prob(a, b-1)  

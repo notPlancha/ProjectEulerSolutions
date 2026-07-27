@@ -1,6 +1,3 @@
-from tqdm import tqdm
-
-
 def fib(n):
   if n in [1, 2]:
     return 1

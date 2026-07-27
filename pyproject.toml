@@ -22,8 +22,12 @@ dev = [
 ]
 
 
+[tool.poe]
+executor = "uv"
+
 [tool.poe.tasks]
 format = "ruff format"
-
+check = "ruff check --fix"
+ruff = ["format", "check"]
 [tool.ruff]
 indent-width = 2

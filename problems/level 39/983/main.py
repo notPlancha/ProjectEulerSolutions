@@ -1,8 +1,9 @@
-from typing import Generator
+from collections.abc import Generator
+
 from sympy import Circle, Point, sqrt
 
 
-def find_circles_of_mat_distance(d: int, center=Point(0, 0)) -> Generator[Circle]:
+def find_circles_of_mat_distance(d: int, center=Point(0, 0)) -> Generator[Circle]:  # noqa: B008
   first = 0
   last = d
   while first < last:  # first + last = d

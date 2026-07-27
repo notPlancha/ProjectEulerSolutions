@@ -1,8 +1,6 @@
-from tqdm import tqdm
 from math import sqrt
 
 phy = (1 + sqrt(5)) / 2
-from tqdm import tqdm
 
 
 def fib(n):

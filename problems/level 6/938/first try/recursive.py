@@ -1,9 +1,9 @@
-from dataclasses import dataclass
-from math import comb
-from functools import cache
 import sys
-from sympy import Function
+from functools import cache
+from math import comb
+
 import sympy
+from sympy import Function
 
 sys.setrecursionlimit(10**8)
 

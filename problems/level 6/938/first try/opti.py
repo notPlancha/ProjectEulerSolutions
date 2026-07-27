@@ -1,7 +1,7 @@
-from dataclasses import dataclass
-from math import comb
-from functools import cache
 import sys
+from functools import cache
+from math import comb
+
 from tqdm import tqdm
 
 sys.setrecursionlimit(10**8)
@@ -33,6 +33,8 @@ def prob(a, b):
   if a <= 0:
     return 1
   if b <= 0:
+    return 0
+  if a % 2 == 1:
     return 0
 
   alpha = prob_a(a, b)
